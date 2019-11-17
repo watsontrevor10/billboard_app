@@ -1,0 +1,57 @@
+<div class="ui card">
+  <div class="image">
+    <img src="https://robohash.org/<%= @artist.avatar %>? set=set2" />
+  </div>
+  <div class="content">
+    <p class="header"> 
+      <%= @artist.artist_name %>
+    </p>
+    <br />
+    <div class="ui button">
+      <%= link_to "Edit", edit_artist_path(@artist) %>
+    </div>
+    <div class="ui button">
+      <%= link_to "Back", artists_path %>
+    </div>
+    <div class="ui button">
+      <%= link_to "Delete", method: :delete %>
+    </div>
+  </div>
+</div>
+
+<h1>Albums</h1>
+<br>
+<div class="ui button">
+<%= link_to 'Add Album', new_artist_album_path(@artist) %>
+<br>
+</div>
+<div class="ui four column grid"> 
+    <% @artist.albums.each do |album| %>
+    <div class=column>
+      <div class="ui small image">
+        <img src="https://robohash.org/<%= album.cover %>? set=set1" />
+      </div>
+      <div class="content">
+        <div class="header">
+          <%= album.album_name %>
+        </div>
+        <div class="ui basic green button">
+        <%= link_to 'Edit', edit_artist_album_path(@artist, album) %>
+      </div>
+        <div class="ui basic green button">
+        <%= link_to 'album Details', artist_album_path(@artist, album) %>
+      </div>
+      <div class="ui basic red button">
+      <%= link_to "Delete", method: :delete %>
+      </div>
+      </div>
+    </div>
+  
+  <% end %>
+
+</div>
+</div>
+<div class="ui button">
+<%= link_to 'Add album', new_artist_album_path(@artist) %>
+
+</div>

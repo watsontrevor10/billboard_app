@@ -1,0 +1,15 @@
+<h1>Add a Song</h1>
+<%= form_with(model: [@artist, @album, @song], local: true, class: "ui form") do |f| %>
+  <div class="field">
+    <%= f.label :song_name %>
+    <%= f.text_field :song_name, required: true, placeholder: "Song Name"%>
+  </div>
+  <div class="field">
+    <%= f.label :lyrics %>
+    <%= f.text_field :lyrics, required: true, placeholder: "Lyrics"%>
+  </div>
+   <%= f.submit class: "ui button"%>
+  <div class="ui button">
+    <%= link_to 'Cancel', artists_path %>
+  </div>
+<% end %>

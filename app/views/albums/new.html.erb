@@ -1,0 +1,15 @@
+<h1>Add a Album</h1>
+<%= form_with(model: [@artist, @album], local: true, class: "ui form") do |f| %>
+  <div class="field">
+    <%= f.label :album_name %>
+    <%= f.text_field :album_name, required: true, placeholder: "Album Name"%>
+  </div>
+  <div class="field">
+    <%= f.label :cover %>
+    <%= f.text_field :cover, required: true, placeholder: "Cover"%>
+  </div>
+   <%= f.submit class: "ui button"%>
+  <div class="ui button">
+    <%= link_to 'Cancel', artist_path(@artist) %>
+  </div>
+<% end %>

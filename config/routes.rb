@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'static_pages/billboard'
   root 'artists#index'
-  get "/billboards/:billboard" => "billboard#show"
   
  resources :artists do
    resources :albums

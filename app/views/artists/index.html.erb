@@ -22,7 +22,7 @@
             <%= link_to "Edit", edit_artist_path(artist) %>
           </div>
           <div class="ui basic red button">
-            <%= link_to "Delete", method: :delete %>
+            <%= link_to "Delete", artist_path(artist), method: :delete %>
           </div>
         </div>
       </div>

@@ -43,7 +43,7 @@
         <%= link_to 'Edit', edit_album_song_path(@album, song) %>
       </div>
       <div class="ui basic red button">
-      <%= link_to "Delete Album", method: :delete %>
+      <%= link_to "Delete Album", artist_album_path(@artist, album), method: :delete %>
       </div>
       </div>
     </div>

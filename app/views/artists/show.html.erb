@@ -14,7 +14,7 @@
       <%= link_to "Back", artists_path %>
     </div>
     <div class="ui button">
-      <%= link_to "Delete", method: :delete %>
+      <%= link_to "Delete", artist_path(@artist), method: :delete %>
     </div>
   </div>
 </div>
@@ -42,7 +42,7 @@
         <%= link_to 'album Details', artist_album_path(@artist, album) %>
       </div>
       <div class="ui basic red button">
-      <%= link_to "Delete", method: :delete %>
+      <%= link_to "Delete", artist_album_path(@artist, album), method: :delete %>
       </div>
       </div>
     </div>

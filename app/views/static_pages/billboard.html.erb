@@ -1,3 +1,23 @@
-<% @billbaord.each do |song| %>
-  <%= song.song_name %>
+<div class="ui button">
+  <%= link_to 'Artists', artists_path %>
+ </div>
+ <br />
+ <br />
+<hr />
+<% @song.each do |rank| %>
+  <div class="ui divided items">
+    <div class="item">
+      <div class="content">
+        <a class="header"><%= rank.song_name %></a>
+      </div>
+      <p></p>
+      <p></p>    
+      <br />
+      <div class="extra">
+      <i class="green music icon">Listens: <%= rank.total_listens %></i>
+      </div>
+    </div>
+  </div>
+  <br />
+  <hr />
 <% end %>

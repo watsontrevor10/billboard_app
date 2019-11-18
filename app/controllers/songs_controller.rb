@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  before_action :set_album #:set_artist
+  before_action :set_album :billboard
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -60,7 +60,7 @@ class SongsController < ApplicationController
     params.require(:song).permit(:song_name, :total_listens, :lyrics)
   end
 
-  # def set_artist
-  #   @artist = Artist.find(params[:artist_id])
-  # end
+  def set_billbaord 
+    @billboard = Song.order("total_listens desc").limit(100)
+  end
 end
